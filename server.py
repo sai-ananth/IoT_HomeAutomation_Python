@@ -12,6 +12,7 @@ while True:
     output = productId
     c.send(output.encode('utf-8'))
     status =c.recv(1024).decode().lower()
+    print(status)
     if status == "on" or status == "off":
         output = 'Updated the status Successfully'
     else:
