@@ -13,9 +13,9 @@ while True:
     c.send(output.encode('utf-8'))
     status =c.recv(1024).decode().lower()
     if status == "on" or status == "off":
-        output = 'Updated the status Successfully'
+        output = 'Updated the status to '+ status +' Successfully'
     else:
-        output = 'Update failed'
+        output = 'Failed to set status '+ status
     print(output)
     c.send(output.encode('utf-8'))
     c.close() 
