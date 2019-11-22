@@ -11,7 +11,7 @@ while True:
     c, addr = s.accept() 
     output = productId
     c.send(output.encode('utf-8'))
-    status =c.recv(1024).decode()
+    status =c.recv(1024).decode().lower()
     if status == "on" or status == "off":
         output = 'Updated the status Successfully'
     else:
